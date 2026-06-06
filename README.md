@@ -2,6 +2,13 @@
 
 Generate test oracles from Python docstrings and verify coverage.
 
+## SOTA Status
+
+- Tests: **13 passing** (`pytest tests/ -q`, ~0.2s)
+- CI: ![ci](https://img.shields.io/badge/ci-pending-lightgrey) (placeholder — wire up GitHub Actions)
+- Maturity tier: **1 / 3** (MVP — v0.1.0)
+- Last commit: 2026-06-06
+
 ## Quick Start
 
 ```bash
@@ -33,3 +40,15 @@ Exit code: `0` = 100% coverage, `1` = missing tests.
 ## GitHub
 
 https://github.com/OpenSIN-Code/SIN-Code-Oracle-Tool
+
+## Integration
+
+This tool is exposed in the unified `sin code` hub:
+
+```bash
+sin code oracle generate src/foo.py -o tests/test_foo.py    # alias of: oracle generate ...
+sin code oracle check    src/foo.py --against tests/test_foo.py
+```
+
+See `AGENTS.md` for boundaries, key files, and verification steps.
+
